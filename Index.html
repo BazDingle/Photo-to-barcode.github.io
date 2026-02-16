@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0f172a">
+
+<title>Asset Barcode</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bwip-js@4/dist/bwip-js-min.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+<h1>Asset Barcode</h1>
+
+<button id="cameraBtn">📸 Scan Label</button>
+<input type="file" accept="image/*" capture="environment" id="photoInput" hidden>
+
+<img id="preview" class="hidden">
+
+<div id="loading" class="hidden">Processing...</div>
+
+<div id="result" class="hidden">
+    <input type="text" id="serialInput">
+    <button id="generateBtn">Generate Barcode</button>
+    <canvas id="barcodeCanvas"></canvas>
+    <button id="downloadBtn">Download PNG</button>
+</div>
+
+<div id="error" class="error hidden"></div>
+
+</div>
+
+<script src="app.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>

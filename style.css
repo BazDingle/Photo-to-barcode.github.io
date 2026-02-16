@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 12px;
+    background: #3b82f6;
+    color: white;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 15px;
+}
+
+canvas {
+    background: white;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+#preview {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: #f87171;
+    margin-top: 10px;
+}
