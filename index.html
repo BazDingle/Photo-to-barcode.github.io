@@ -16,24 +16,31 @@
 <body>
 
 <div class="app">
+    <header class="header">
+        <p class="eyebrow">Barcode Utility</p>
+        <h1>Asset Barcode Generator</h1>
+        <p class="subtitle">Scan a device label, verify the detected serial number, and export a clean barcode image.</p>
+    </header>
 
-<h1>Asset Barcode</h1>
+    <section class="panel actions">
+        <button id="cameraBtn" class="primary-btn">📸 Scan Label</button>
+        <input type="file" accept="image/*" capture="environment" id="photoInput" hidden>
+        <p class="hint">Tip: Align the serial number area clearly for better OCR accuracy.</p>
+    </section>
 
-<button id="cameraBtn">📸 Scan Label</button>
-<input type="file" accept="image/*" capture="environment" id="photoInput" hidden>
+    <img id="preview" class="hidden" alt="Uploaded label preview">
 
-<img id="preview" class="hidden">
+    <div id="loading" class="status hidden">Processing image...</div>
 
-<div id="loading" class="hidden">Processing...</div>
+    <section id="result" class="panel hidden">
+        <label for="serialInput">Detected Serial Number</label>
+        <input type="text" id="serialInput" placeholder="Enter or edit serial number">
+        <button id="generateBtn" class="secondary-btn">Generate Barcode</button>
+        <canvas id="barcodeCanvas"></canvas>
+        <button id="downloadBtn" class="primary-btn">Download PNG</button>
+    </section>
 
-<div id="result" class="hidden">
-    <input type="text" id="serialInput">
-    <button id="generateBtn">Generate Barcode</button>
-    <canvas id="barcodeCanvas"></canvas>
-    <button id="downloadBtn">Download PNG</button>
-</div>
-
-<div id="error" class="error hidden"></div>
+    <div id="error" class="error hidden"></div>
 
 </div>
 
